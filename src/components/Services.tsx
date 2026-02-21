@@ -54,7 +54,7 @@ export default function Services() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="group relative overflow-hidden border border-white/5 bg-loom-charcoal p-8 transition-colors hover:border-loom-accent/50 hover:bg-white/5"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-loom-accent group-hover:bg-loom-accent group-hover:text-white transition-colors">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/5 text-white group-hover:bg-white group-hover:text-loom-black transition-colors">
                 <service.icon size={24} />
               </div>
               <h3 className="mb-3 font-display text-xl font-medium text-white">

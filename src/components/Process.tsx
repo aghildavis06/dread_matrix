@@ -33,8 +33,8 @@ export default function Process() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="relative flex flex-col items-center text-center lg:items-start lg:text-left"
               >
-                <div className="relative z-10 mb-6 flex h-4 w-4 items-center justify-center rounded-full bg-loom-accent shadow-[0_0_10px_rgba(58,134,255,0.5)] lg:mb-8">
-                  <div className="h-2 w-2 rounded-full bg-white" />
+                <div className="relative z-10 mb-6 flex h-4 w-4 items-center justify-center rounded-full bg-white lg:mb-8">
+                  <div className="h-2 w-2 rounded-full bg-loom-black" />
                 </div>
                 <span className="mb-2 font-mono text-xs font-bold text-gray-500">0{index + 1}</span>
                 <h3 className="font-display text-lg font-medium text-white">{step}</h3>

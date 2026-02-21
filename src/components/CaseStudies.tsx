@@ -80,7 +80,7 @@ export default function CaseStudies() {
 
                 <div className="absolute bottom-0 left-0 w-full translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10px] text-loom-signal uppercase tracking-wider">{item.stats}</span>
+                    <span className="font-mono text-[10px] text-white/50 uppercase tracking-wider">{item.stats}</span>
                     <div className="flex items-center gap-1 text-xs font-medium text-white">
                       View <ArrowUpRight size={12} />
                     </div>
@@ -89,7 +89,7 @@ export default function CaseStudies() {
               </div>
 
               <div className="mt-4 border-t border-white/10 pt-3">
-                <h3 className="font-display text-lg font-medium text-white leading-tight group-hover:text-loom-accent transition-colors">{item.title}</h3>
+                <h3 className="font-display text-lg font-medium text-white leading-tight group-hover:text-white/80 transition-colors">{item.title}</h3>
                 <p className="mt-1 font-mono text-xs text-gray-500">{item.client} / {item.category}</p>
               </div>
             </motion.div>

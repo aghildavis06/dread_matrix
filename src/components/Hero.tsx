@@ -9,7 +9,7 @@ function GridWave() {
   const meshRef = useRef<THREE.InstancedMesh>(null);
 
   // Grid configuration
-  const rows = 80;
+  const rows = 130;
   const cols = 55;
   const count = rows * cols;
 
@@ -57,7 +57,7 @@ function GridWave() {
       // peaks get a +0.25 hue offset, valleys stay at baseHue
       const normY = (y + 2) / 4; // 0–1
       const hue = (baseHue + normY * 0.35) % 1;
-      const lightness = 0.35 + normY * 0.40; // 0.35 (valley) → 0.75 (peak)
+      const lightness = 0.50 + normY * 0.40; // 0.50 (valley) → 0.90 (peak) for better visibility
       color.setHSL(hue, 1.0, lightness);
 
       meshRef.current!.setColorAt(i, color);
@@ -79,11 +79,10 @@ function GridWave() {
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-loom-black">
-      {/* Top fabric — full width, upper 60% */}
-      <div className="absolute top-0 left-0 w-full h-[60%] z-0">
-        <Canvas camera={{ position: [-4, 4, 14], fov: 80 }}>
+      <div className="absolute inset-0 z-0">
+        <Canvas camera={{ position: [0, 13, 14], fov: 68 }}>
           <color attach="background" args={['#0F0F12']} />
-          <fog attach="fog" args={['#0F0F12', 8, 35]} />
+          <fog attach="fog" args={['#0F0F12', 5, 30]} />
 
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 20, 10]} intensity={1} color="#ffffff" />
@@ -93,10 +92,6 @@ export default function Hero() {
           <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
         </Canvas>
-        {/* Fade on left, right, and bottom edges */}
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-loom-black to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-loom-black to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-loom-black to-transparent pointer-events-none" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col justify-center px-6 md:px-12 lg:px-24 pointer-events-none">
@@ -108,20 +103,18 @@ export default function Hero() {
         >
           <div className="mb-6 flex items-center gap-3">
             <div className="h-px w-12 bg-loom-accent"></div>
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-loom-accent">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-white">
               Digital Agency · Est. 2020
             </span>
           </div>
 
           <h1 className="font-display text-6xl font-bold leading-[0.9] tracking-tighter text-white md:text-8xl lg:text-9xl">
             Weaving <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-loom-accent via-white to-loom-signal">
-              Scalable
-            </span> <br />
+            Scalable <br />
             Infrastructure.
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg text-gray-400 md:text-xl font-sans leading-relaxed border-l-2 border-white/10 pl-6">
+          <p className="mt-8 max-w-2xl text-lg text-white md:text-xl font-sans leading-relaxed border-l-2 border-white/10 pl-6">
             Digital Loom engineers performance-driven platforms, applications, and commerce systems built to scale.
             Precision code for the modern web.
           </p>

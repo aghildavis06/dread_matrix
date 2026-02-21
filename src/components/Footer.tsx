@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           <a
             href="mailto:hello@digitalloom.io"
-            className="group relative overflow-hidden bg-loom-accent px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-loom-accent/90"
+            className="group relative overflow-hidden bg-white px-8 py-4 text-sm font-semibold uppercase tracking-wider text-loom-black transition-all hover:bg-gray-200"
           >
             <span className="relative z-10">Request a Strategy Call</span>
           </a>
@@ -32,20 +32,20 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 font-mono text-xs font-bold uppercase text-white">Sitemap</h4>
             <ul className="space-y-2 text-sm text-gray-500">
-              <li><button onClick={() => scrollTo('services')} className="hover:text-loom-accent transition-colors">Services</button></li>
-              <li><button onClick={() => scrollTo('work')} className="hover:text-loom-accent transition-colors">Case Studies</button></li>
-              <li><button onClick={() => scrollTo('process')} className="hover:text-loom-accent transition-colors">Process</button></li>
-              <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-loom-accent transition-colors">About</button></li>
+              <li><button onClick={() => scrollTo('services')} className="hover:text-white transition-colors">Services</button></li>
+              <li><button onClick={() => scrollTo('work')} className="hover:text-white transition-colors">Case Studies</button></li>
+              <li><button onClick={() => scrollTo('process')} className="hover:text-white transition-colors">Process</button></li>
+              <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors">About</button></li>
             </ul>
           </div>
 
           <div>
             <h4 className="mb-4 font-mono text-xs font-bold uppercase text-white">Connect</h4>
             <ul className="space-y-2 text-sm text-gray-500">
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-loom-accent transition-colors">LinkedIn</a></li>
-              <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-loom-accent transition-colors">Twitter</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-loom-accent transition-colors">GitHub</a></li>
-              <li><a href="mailto:hello@digitalloom.io" className="hover:text-loom-accent transition-colors">Email</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a></li>
+              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="mailto:hello@digitalloom.io" className="hover:text-white transition-colors">Email</a></li>
             </ul>
           </div>
         </div>

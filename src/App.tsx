@@ -2,7 +2,13 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Authority from './components/Authority';
 import Services from './components/Services';
+import TrustedSupport from './components/TrustedSupport';
+import Experience from './components/Experience';
 import CaseStudies from './components/CaseStudies';
+import FeaturedProjects from './components/FeaturedProjects';
+import ClientReviews from './components/ClientReviews';
+import Projects from './components/Projects';
+import Consultation from './components/Consultation';
 import Process from './components/Process';
 import TechStack from './components/TechStack';
 import Testimonials from './components/Testimonials';
@@ -15,7 +21,13 @@ export default function App() {
       <Hero />
       <Authority />
       <Services />
+      <TrustedSupport />
+      <Experience />
       <CaseStudies />
+      <FeaturedProjects />
+      <ClientReviews />
+      <Projects />
+      <Consultation />
       <Process />
       <TechStack />
       <Testimonials />

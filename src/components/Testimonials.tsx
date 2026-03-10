@@ -24,7 +24,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 border-b border-white/10 pb-8">
           <h2 className="font-display text-3xl font-semibold text-white md:text-4xl">
-            06 — Client Trust
+            08 — Client Trust
           </h2>
         </div>
 

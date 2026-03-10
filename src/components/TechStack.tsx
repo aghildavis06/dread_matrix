@@ -18,7 +18,7 @@ export default function TechStack() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 border-b border-white/10 pb-8">
           <h2 className="font-display text-3xl font-semibold text-white md:text-4xl">
-            05 — Technology Stack
+            07 — Technology Stack
           </h2>
         </div>
 

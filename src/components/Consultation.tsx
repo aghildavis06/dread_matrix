@@ -2,19 +2,6 @@ import React, { useState } from 'react';
 
 type FormState = { name: string; email: string; company: string; message: string };
 
-const MapEmbed: React.FC = () => (
-  <iframe
-    title="location-map"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-    width="100%"
-    height="200"
-    style={{ border: 0, borderRadius: 12, display: 'block' }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  />
-);
-
 interface InfoCardProps {
   icon: React.ReactNode;
   title: string;
@@ -62,52 +49,25 @@ export default function FreeConsultation() {
     setForm(prev => ({ ...prev, [name]: value }));
   };
   return (
-    <section style={{
-      minHeight: '100vh',
-      background: '#0F0F12',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '60px 24px',
-      fontFamily: "'Segoe UI', sans-serif",
-      color: '#ffffff',
-    }}>
-      <div style={{
-        maxWidth: 1100,
-        width: '100%',
-        display: 'grid',
-        gridTemplateColumns: '1fr 420px',
-        gap: 40,
-        alignItems: 'start',
-      }}>
+    <section id="free-consultation" className="bg-loom-black py-10 text-white">
+      <div className="mx-auto w-full max-w-5xl px-6 md:px-12 grid md:grid-cols-2 gap-6 md:gap-10 items-start">
 
         {/* LEFT COLUMN */}
         <div>
           {/* Label */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            <div style={{ height: 2, width: 36, background: '#F97316' }} />
-            <span style={{ color: '#F97316', fontWeight: 700, fontSize: 12, letterSpacing: '2px', textTransform: 'uppercase' }}>
-              FREE CONSULTATION
-            </span>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-0.5 w-9 bg-loom-accent" />
+            <span className="text-xxs md:text-xs text-loom-accent font-bold tracking-widest uppercase">FREE CONSULTATION</span>
           </div>
 
           {/* Title */}
-          <h2 style={{ fontSize: 38, fontWeight: 800, color: '#FFFFFF', margin: '0 0 14px', lineHeight: 1.2 }}>
-            Book A Free IT Consultation
-          </h2>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight mb-3">Book A Free IT Consultation</h2>
 
           {/* Subtitle */}
-          <p style={{ fontSize: 14, color: '#9aa4b3', lineHeight: 1.7, maxWidth: 480, margin: '0 0 32px' }}>
-            It is a long established fact that a reader will be distracted the readab content of a page when looking at layout the point.
-          </p>
+          <p className="text-sm md:text-base text-gray-400 leading-relaxed max-w-lg mb-6">It is a long established fact that a reader will be distracted the readab content of a page when looking at layout the point.</p>
 
           {/* Info Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '24px 32px',
-            marginBottom: 32,
-          }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mb-8">
             <InfoCard
               icon={<svg width="18" height="18" fill="none" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>}
               title="Location"
@@ -126,7 +86,7 @@ export default function FreeConsultation() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
               <div style={{
                 width: 42, height: 42, borderRadius: '50%',
-                background: '#071127',
+                background: 'var(--color-loom-charcoal)',
                 boxShadow: '0 2px 10px rgba(0,0,0,0.6)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexShrink: 0,
@@ -145,20 +105,12 @@ export default function FreeConsultation() {
             </div>
           </div>
 
-          {/* Map */}
-          <MapEmbed />
+          {/* Map removed per request */}
         </div>
 
         {/* RIGHT COLUMN — Form Card */}
-        <div style={{
-          background: '#071127',
-          borderRadius: 20,
-          padding: '36px 32px',
-          boxShadow: '0 8px 40px rgba(0,0,0,0.6)',
-        }}>
-          <h3 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', margin: '0 0 28px' }}>
-            Send Us message
-          </h3>
+        <div className="bg-loom-charcoal rounded-2xl p-6 md:p-8 shadow-lg">
+          <h3 className="text-lg md:text-xl font-bold text-white mb-6">Send Us message</h3>
 
           {[
             { label: 'Full Name*', name: 'name', placeholder: 'Full Name*', type: 'text' },
@@ -175,18 +127,7 @@ export default function FreeConsultation() {
                 placeholder={field.placeholder}
                 value={form[field.name]}
                 onChange={handleChange}
-                style={{
-                  width: '100%',
-                  padding: '12px 14px',
-                  border: '1.5px solid rgba(255,255,255,0.06)',
-                  borderRadius: 10,
-                  fontSize: 14,
-                  color: '#ffffff',
-                  outline: 'none',
-                  boxSizing: 'border-box',
-                  background: '#0b1220',
-                  transition: 'border-color 0.2s',
-                }}
+                className="w-full px-3 py-3 border rounded-lg text-white bg-[#0b1220] border-white/6 text-sm"
                 onFocus={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = '#F97316'}
                 onBlur={(e: React.FocusEvent<HTMLInputElement>) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'}
               />
@@ -204,49 +145,14 @@ export default function FreeConsultation() {
               value={form.message}
               onChange={handleChange}
               rows={5}
-              style={{
-                width: '100%',
-                padding: '12px 14px',
-                border: '1.5px solid rgba(255,255,255,0.06)',
-                borderRadius: 10,
-                fontSize: 14,
-                color: '#ffffff',
-                outline: 'none',
-                boxSizing: 'border-box',
-                background: '#0b1220',
-                resize: 'vertical',
-                fontFamily: 'inherit',
-                transition: 'border-color 0.2s',
-              }}
+              className="w-full px-3 py-3 border rounded-lg text-white bg-[#0b1220] border-white/6 text-sm resize-y"
               onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = '#F97316'}
               onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'}
             />
           </div>
 
           {/* Submit */}
-          <button
-            style={{
-              width: '100%',
-              padding: '14px 0',
-              background: '#F97316',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 50,
-              fontSize: 15,
-              fontWeight: 700,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 8,
-              letterSpacing: '0.3px',
-              transition: 'background 0.2s, transform 0.1s',
-            }}
-            onMouseEnter={e => e.currentTarget.style.background = '#ea6500'}
-            onMouseLeave={e => e.currentTarget.style.background = '#F97316'}
-            onMouseDown={e => e.currentTarget.style.transform = 'scale(0.98)'}
-            onMouseUp={e => e.currentTarget.style.transform = 'scale(1)'}
-          >
+          <button className="w-full py-3 rounded-full bg-loom-accent text-white font-bold tracking-wide flex items-center justify-center gap-2 hover:opacity-95 active:scale-95 transition">
             Send A Request
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <line x1="5" y1="12" x2="19" y2="12" />

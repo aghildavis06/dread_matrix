@@ -46,7 +46,7 @@ export default function CaseStudies() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-12 flex items-end justify-between border-b border-white/10 pb-6">
           <h2 className="font-display text-2xl font-semibold text-white md:text-3xl">
-            05 — Case Studies
+             Case Studies
           </h2>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

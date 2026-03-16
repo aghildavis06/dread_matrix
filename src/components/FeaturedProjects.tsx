@@ -1,37 +1,40 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 const projects = [
   {
     title: "Cloud Migration",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&auto=format&fit=crop",
-    alt: "Cloud migration project with team collaborating",
+      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80&auto=format&fit=crop",
+    alt: "Cloud migration project with cloud infrastructure",
   },
   {
     title: "AI-Powered Chatbot",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&auto=format&fit=crop",
-    alt: "AI-powered chatbot interface",
+      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&q=80&auto=format&fit=crop",
+    alt: "AI powered chatbot interface and conversation UI",
   },
   {
     title: "Cloud Migration",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&auto=format&fit=crop",
-    alt: "Cloud migration project implementation",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80&auto=format&fit=crop",
+    alt: "Cloud platform migration and infrastructure",
   },
   {
     title: "Cybersecurity Upgrade",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&auto=format&fit=crop",
-    alt: "Cybersecurity upgrade and protection",
+      "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?w=1200&q=80&auto=format&fit=crop",
+    alt: "Cybersecurity upgrade with secure lock imagery",
   },
 ];
 
 export default function FeaturedProjects() {
-  const slides = [...projects, ...projects, ...projects];
-  const centerIndex = projects.length;
+  // Create multiple clones of the projects array to provide a larger buffer
+  // so the carousel can scroll left/right infinitely without visible gaps.
+  const cloneCount = 5; // odd number keeps a center copy
+  const slides = Array.from({ length: cloneCount }, () => projects).flat();
+  const centerIndex = projects.length * Math.floor(cloneCount / 2);
 
   const trackRef = useRef<HTMLDivElement | null>(null);
   const [index, setIndex] = useState(centerIndex);
@@ -54,9 +57,13 @@ export default function FeaturedProjects() {
   useEffect(() => {
     if (!trackRef.current) return;
     const track = trackRef.current;
-    const slide = track.querySelector<HTMLDivElement>("[data-slide]");
-    const slideWidth = slide ? slide.clientWidth : track.clientWidth / 4;
+    const getSlideWidth = () => {
+      const slide = track.querySelector<HTMLDivElement>("[data-slide]");
+      const w = slide ? slide.clientWidth : Math.floor(track.clientWidth / 4);
+      return w && w > 10 ? w : Math.floor(track.clientWidth / 4) || 300;
+    };
 
+    const slideWidth = getSlideWidth();
     track.style.transition = isAnimating ? "transform 450ms ease" : "none";
     track.style.transform = `translateX(${-index * slideWidth}px)`;
 
@@ -78,22 +85,48 @@ export default function FeaturedProjects() {
     };
 
     track.addEventListener("transitionend", handleTransitionEnd);
-    return () =>
+    // Recalculate on resize (addresses images/layout changes)
+    const onResize = () => {
+      const w = getSlideWidth();
+      track.style.transition = "none";
+      track.style.transform = `translateX(${ -index * w }px)`;
+    };
+    window.addEventListener('resize', onResize);
+    window.addEventListener('load', onResize);
+    return () => {
       track.removeEventListener("transitionend", handleTransitionEnd);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('load', onResize);
+    };
   }, [index]);
 
   useEffect(() => {
     if (!trackRef.current) return;
     const track = trackRef.current;
-    const firstSlide = track.querySelector<HTMLDivElement>("[data-slide]");
-    const slideWidth = firstSlide ? firstSlide.clientWidth : track.clientWidth / 4;
+    const getSlideWidth = () => {
+      const firstSlide = track.querySelector<HTMLDivElement>("[data-slide]");
+      const w = firstSlide ? firstSlide.clientWidth : Math.floor(track.clientWidth / 4);
+      return w && w > 10 ? w : Math.floor(track.clientWidth / 4) || 300;
+    };
 
+    const slideWidth = getSlideWidth();
     track.style.transition = "none";
     track.style.transform = `translateX(${-centerIndex * slideWidth}px)`;
+    // ensure correct position after images load
+    const onLoad = () => {
+      const w = getSlideWidth();
+      track.style.transform = `translateX(${ -centerIndex * w }px)`;
+    };
+    window.addEventListener('load', onLoad);
+    window.addEventListener('resize', onLoad);
+    return () => {
+      window.removeEventListener('load', onLoad);
+      window.removeEventListener('resize', onLoad);
+    };
   }, []);
 
   return (
-    <section id="featured" className="w-full bg-loom-black py-32">
+    <section id="featured" className="w-full bg-loom-black py-16">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-bold text-white md:text-5xl">
@@ -104,7 +137,8 @@ export default function FeaturedProjects() {
         <div className="relative">
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white p-2"
+            className="absolute top-1/2 z-50 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg left-3 md:-left-8"
+            style={{ color: 'var(--color-loom-black)' }}
           >
             <ArrowLeft size={18} />
           </button>
@@ -112,18 +146,26 @@ export default function FeaturedProjects() {
           <div className="overflow-hidden">
             <div ref={trackRef} className="flex">
               {slides.map((project, i) => (
-                <div key={i} data-slide className="w-[25%] flex-shrink-0 px-4">
+                <div key={i} data-slide className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 px-4">
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     className="group flex flex-col"
                   >
-                    <div className="mb-6 overflow-hidden rounded-2xl">
+                    <div className="mb-6 overflow-hidden rounded-2xl relative" style={{ paddingTop: '66.66%' }}>
                       <img
                         src={project.image}
                         alt={project.alt}
-                        className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        onLoad={() => {
+                          const track = trackRef.current;
+                          if (!track) return;
+                          const slide = track.querySelector<HTMLDivElement>("[data-slide]");
+                          const w = slide ? slide.clientWidth : Math.floor(track.clientWidth / 4) || 300;
+                          track.style.transition = 'none';
+                          track.style.transform = `translateX(${ -index * w }px)`;
+                        }}
+                        className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     </div>
 
@@ -145,7 +187,8 @@ export default function FeaturedProjects() {
 
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white p-2"
+            className="absolute top-1/2 z-50 -translate-y-1/2 rounded-full bg-white p-2 shadow-lg right-3 md:-right-8"
+            style={{ color: 'var(--color-loom-black)' }}
           >
             <ArrowRight size={18} />
           </button>

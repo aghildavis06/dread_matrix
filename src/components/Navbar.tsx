@@ -32,7 +32,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-loom-black/90 backdrop-blur-md border-b border-white/5 py-4"
+            ? "bg-loom-black/90 backdrop-blur-md py-4"
             : "bg-transparent py-6"
         }`}
       >
@@ -72,7 +72,7 @@ export default function Navbar() {
               Process
             </button>
             <button
-              onClick={() => scrollTo("contact")}
+              onClick={() => scrollTo("free-consultation")}
               className="border border-white/20 px-5 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-loom-black transition-all"
             >
               Start Project

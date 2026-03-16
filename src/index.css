@@ -6,11 +6,11 @@
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-loom-black: #0F0F12;
-  --color-loom-charcoal: #16181D;
+  --color-loom-black: #071617;
+  --color-loom-charcoal: #0B2620;
   --color-loom-text: #F5F7FA;
-  --color-loom-accent: #3A86FF;
-  --color-loom-signal: #00F5A0;
+  --color-loom-accent: #15B651;
+  --color-loom-signal: #05AA4B;
 }
 
 :root {
@@ -23,7 +23,15 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+html, #root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+img { max-width: 100%; height: auto; display: block; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);

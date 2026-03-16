@@ -25,7 +25,7 @@ export default function TrustedSupport() {
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 border-b border-white/10 pb-8">
           <h2 className="font-display text-3xl font-semibold text-white md:text-4xl">
-            03 — Our Trusted Support
+            Our Trusted Support
           </h2>
         </div>
 

@@ -30,7 +30,7 @@ export default function App() {
       <Consultation />
       <Process />
       <TechStack />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Footer />
     </main>
   );

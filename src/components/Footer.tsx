@@ -45,7 +45,7 @@ export default function Footer() {
               <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
               <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a></li>
               <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
-              <li><a href="mailto:hello@digitalloom.io" className="hover:text-white transition-colors">Email</a></li>
+              <li><a href="mailto:hello@dreadmatrix.io" className="hover:text-white transition-colors">Email</a></li>
             </ul>
           </div>
         </div>

@@ -31,17 +31,11 @@ export default function FeaturedProjects() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section style={{
-      padding: '64px 0 80px',
-      width: '100%',
-      background: '#0F0F12',
-      color: '#ffffff',
-      fontFamily: "'Segoe UI', sans-serif",
-    }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 48px' }}>
+    <section className="w-full bg-loom-black py-16 text-white">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
 
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+        <div className="text-left mb-12">
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -72,35 +66,22 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Cards Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 24,
-        }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
               onMouseEnter={() => setHovered(project.id)}
               onMouseLeave={() => setHovered(null)}
               style={{
-                borderRadius: 20,
-                overflow: 'hidden',
-                background: 'transparent',
                 boxShadow: hovered === project.id
                   ? '0 12px 40px rgba(15,43,90,0.18)'
                   : '0 4px 20px rgba(15,43,90,0.08)',
-                transition: 'box-shadow 0.3s ease, transform 0.3s ease',
                 transform: hovered === project.id ? 'translateY(-6px)' : 'translateY(0)',
-                cursor: 'pointer',
               }}
+              className="rounded-2xl overflow-hidden bg-transparent transition-transform duration-300 cursor-pointer"
             >
               {/* Image */}
-              <div style={{
-                position: 'relative',
-                width: '100%',
-                paddingTop: '75%',
-                overflow: 'hidden',
-              }}>
+              <div style={{ position: 'relative', width: '100%', paddingTop: '75%', overflow: 'hidden' }}>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -138,31 +119,9 @@ export default function FeaturedProjects() {
               </div>
 
               {/* Card Footer */}
-              <div style={{
-                padding: '18px 20px 20px',
-                background: '#071127',
-              }}>
-                <h3 style={{
-                  margin: '0 0 10px',
-                  fontSize: 17,
-                  fontWeight: 700,
-                  color: '#ffffff',
-                }}>
-                  {project.title}
-                </h3>
-                <a
-                  href="#"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 6,
-                    color: hovered === project.id ? '#F97316' : '#9aa4b3',
-                    fontSize: 13,
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease',
-                  }}
-                >
+              <div className="p-4 bg-loom-charcoal">
+                <h3 className="mb-2 text-base font-bold text-white">{project.title}</h3>
+                <a href="#" className={`inline-flex items-center gap-2 text-sm font-semibold ${hovered === project.id ? 'text-loom-accent' : 'text-gray-400'}`}>
                   View Details
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7" />

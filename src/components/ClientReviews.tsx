@@ -59,19 +59,11 @@ function StarRating({ color = '#F97316', size = 16 }: { color?: string; size?: n
 
 export default function ClientReviews() {
   return (
-    <section
-      style={{
-        width: '100%',
-        backgroundColor: '#0F0F12',
-        padding: '64px 0',
-        color: '#ffffff',
-        fontFamily: 'sans-serif',
-      }}
-    >
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 48px' }}>
+    <section className="w-full bg-loom-black py-16 text-white">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
 
         {/* Top row: heading left, rating right */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 40 }}>
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-10">
           {/* Left: label + heading */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
@@ -86,70 +78,45 @@ export default function ClientReviews() {
           </div>
 
           {/* Right: aggregate rating */}
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 48, fontWeight: 800, color: '#FFFFFF', lineHeight: 1 }}>4.9</div>
-            <div style={{ margin: '6px 0 4px' }}>
+          <div className="text-center md:text-right">
+            <div className="text-4xl md:text-5xl font-extrabold leading-tight">4.9</div>
+            <div className="my-1">
               <StarRating size={18} />
             </div>
-            <div style={{ fontSize: 13, color: '#9aa4b3' }}>Based on 150 reviews</div>
+            <div className="text-sm text-gray-400">Based on 150 reviews</div>
           </div>
         </div>
 
         {/* Bottom row: dark stats card + testimonial cards */}
-        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start' }}>
+        <div className="flex flex-col md:flex-row gap-6 items-start">
 
           {/* Dark card */}
-          <div
-            style={{
-              minWidth: 220,
-              backgroundColor: '#0f1f3d',
-              borderRadius: 16,
-              padding: '28px 24px',
-              color: '#fff',
-              flexShrink: 0,
-            }}
-          >
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#fff', marginBottom: 10 }}>Success stories</div>
-            <div style={{ fontSize: 40, fontWeight: 800, lineHeight: 1 }}>98%</div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 6, marginBottom: 24 }}>
-              Client Retention Rate
-            </div>
+          <div className="min-w-[220px] bg-[#0f1f3d] rounded-lg p-6 text-white flex-shrink-0">
+            <div className="text-sm font-semibold mb-2">Success stories</div>
+            <div className="text-3xl font-extrabold leading-tight">98%</div>
+            <div className="text-xs text-white/60 mt-2 mb-4">Client Retention Rate</div>
 
-            <div style={{ height: 1, backgroundColor: 'rgba(255,255,255,0.12)', marginBottom: 20 }} />
+            <div className="h-px bg-white/12 mb-4" />
 
-            {/* Trustpilot row */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 12 }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a">
+            <div className="flex items-center gap-3 mb-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a" className="flex-shrink-0">
                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
               </svg>
-              <span style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>Trustpilot</span>
+              <span className="text-sm font-bold">Trustpilot</span>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <div style={{ display: 'flex' }}>
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-2">
                 {avatarUrls.map((url, i) => (
-                  <img
-                    key={i}
-                    src={url}
-                    alt=""
-                    style={{
-                      width: 28,
-                      height: 28,
-                      borderRadius: '50%',
-                      border: '2px solid #0f1f3d',
-                      marginLeft: i === 0 ? 0 : -8,
-                      objectFit: 'cover',
-                    }}
-                  />
+                  <img key={i} src={url} alt="" className="w-7 h-7 rounded-full border-2 border-[#0f1f3d] object-cover" />
                 ))}
               </div>
               <StarRating size={12} />
-              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', marginLeft: 4 }}>450+ reviews</span>
+              <span className="text-xs text-white/60">450+ reviews</span>
             </div>
           </div>
-
           {/* Testimonial cards */}
-              <div style={{ display: 'flex', gap: 16, overflowX: 'auto', paddingBottom: 4, flex: 1 }}>
+          <div className="flex gap-4 overflow-x-auto pb-4 flex-1">
             {reviews.map((r, i) => (
               <motion.div
                 key={i}
@@ -157,15 +124,7 @@ export default function ClientReviews() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                style={{
-                  minWidth: 220,
-                  maxWidth: 240,
-                  flexShrink: 0,
-                  backgroundColor: '#071127',
-                  borderRadius: 14,
-                  padding: '20px 18px',
-                  boxShadow: '0 6px 18px rgba(0,0,0,0.6)',
-                }}
+                className="min-w-[220px] max-w-[240px] flex-shrink-0 bg-loom-charcoal rounded-lg p-5 shadow-md"
               >
                 {/* Stars */}
                 <div style={{ marginBottom: 12 }}>
@@ -173,20 +132,14 @@ export default function ClientReviews() {
                 </div>
 
                 {/* Quote */}
-                <p style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.6, marginBottom: 18 }}>
-                  {r.quote}
-                </p>
+                <p className="text-sm text-gray-300 leading-relaxed mb-4">{r.quote}</p>
 
                 {/* Author */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <img
-                    src={r.avatar}
-                    alt={r.author}
-                    style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover' }}
-                  />
+                <div className="flex items-center gap-3">
+                  <img src={r.avatar} alt={r.author} className="w-9 h-9 rounded-full object-cover" />
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: '#ffffff' }}>{r.author}</div>
-                    <div style={{ fontSize: 11, color: '#9aa4b3' }}>{r.role}</div>
+                    <div className="text-sm font-bold">{r.author}</div>
+                    <div className="text-xs text-gray-400">{r.role}</div>
                   </div>
                 </div>
               </motion.div>

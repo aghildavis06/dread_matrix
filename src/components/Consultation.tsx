@@ -131,7 +131,7 @@ export default function FreeConsultation() {
                 </svg>
               }
               title="Location"
-              lines={["1321 Gateway Atlantic City,", "Florida, 54012"]}
+              lines={["1321 Gateway Kerala,", "India – 678541"]}
             />
             <InfoCard
               icon={
@@ -149,7 +149,7 @@ export default function FreeConsultation() {
                 </svg>
               }
               title="Phone"
-              lines={["(+256) 214 203 215", "(+256) 214 203 216"]}
+              lines={["(+91) 8078 561 913", "(+91) 7012 551 854"]}
             />
             <InfoCard
               icon={
@@ -168,7 +168,7 @@ export default function FreeConsultation() {
                 </svg>
               }
               title="Email"
-              lines={["info@company.com", "Fexo.info@gmail.comm"]}
+              lines={["info@dreadmatrix.in", "hello@dreadmatrix.in"]}
             />
             <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
               <div

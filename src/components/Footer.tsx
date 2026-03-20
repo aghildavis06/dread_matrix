@@ -4,23 +4,10 @@ const scrollTo = (id: string) => {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full bg-loom-black pt-32 pb-12 border-t border-white/10">
+    <footer id="contact" className="w-full bg-loom-black pt-4 pb-12 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
-        <div className="mb-24 flex flex-col items-start justify-between gap-12 md:flex-row md:items-center">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-5xl font-bold text-white md:text-7xl">
-              Build Digital Systems That Perform.
-            </h2>
-          </div>
-          <a
-            href="mailto:hello@digitalloom.io"
-            className="group relative overflow-hidden bg-white px-8 py-4 text-sm font-semibold uppercase tracking-wider text-loom-black transition-all hover:bg-gray-200"
-          >
-            <span className="relative z-10">Request a Strategy Call</span>
-          </a>
-        </div>
-
-        <div className="grid grid-cols-1 gap-12 border-t border-white/10 pt-12 md:grid-cols-4">
+      
+        <div className="grid grid-cols-1 gap-12 border-white/10 pt-12 md:grid-cols-4">
           <div className="col-span-1 md:col-span-2">
             <div className="mb-6 font-display text-2xl font-bold text-white">Dread Matrix</div>
             <p className="max-w-xs text-sm text-gray-500">

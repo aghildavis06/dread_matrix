@@ -170,53 +170,7 @@ export default function FreeConsultation() {
               title="Email"
               lines={["info@dreadmatrix.in", "hello@dreadmatrix.in"]}
             />
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-              <div
-                style={{
-                  width: 42,
-                  height: 42,
-                  borderRadius: "50%",
-                  background: "var(--color-loom-charcoal)",
-                  boxShadow: "0 2px 10px rgba(0,0,0,0.6)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  fill="none"
-                  stroke="#F97316"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <div
-                  style={{
-                    fontWeight: 700,
-                    fontSize: 15,
-                    color: "#FFFFFF",
-                    marginBottom: 10,
-                  }}
-                >
-                  Social
-                </div>
-                <div style={{ display: "flex", gap: 8 }}>
-                  <SocialIcon>f</SocialIcon>
-                  <SocialIcon>𝕏</SocialIcon>
-                  <SocialIcon>◎</SocialIcon>
-                  <SocialIcon>in</SocialIcon>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Map removed per request */}

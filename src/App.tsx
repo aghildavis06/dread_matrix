@@ -21,15 +21,17 @@ export default function App() {
       <Hero />
       <Authority />
       <Services />
-      <TrustedSupport />
-      <Experience />
-      <CaseStudies />
       <FeaturedProjects />
+      <TechStack />
+      {/* <TrustedSupport /> */}
+      <Experience />
+      {/* <CaseStudies /> */}
+      
       <ClientReviews />
       <Projects />
       <Consultation />
-      <Process />
-      <TechStack />
+      {/* <Process /> */}
+      
       {/* <Testimonials /> */}
       <Footer />
     </main>

@@ -50,7 +50,7 @@ export default function FeaturedProjects() {
               letterSpacing: '2px',
               textTransform: 'uppercase',
             }}>
-              OUR PROJECTS
+             News & Insights
             </span>
             <div style={{ height: 2, width: 36, backgroundColor: '#F97316' }} />
           </div>
@@ -61,7 +61,8 @@ export default function FeaturedProjects() {
             lineHeight: 1.25,
             margin: 0,
           }}>
-            Featured projects we're<br />proud to share
+            Read our latest blog
+
           </h2>
         </div>
 

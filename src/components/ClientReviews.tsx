@@ -10,39 +10,39 @@ function svgDataUri(initials: string, bg = '#005a2b', size = 48) {
 const reviews = [
   {
     quote:
-      "This is why having reviews and client testimonials is important for your business. So, in thiarticle, go over some client testimonial examples you should be aware of and how you can go",
-    author: 'Michel Carlos',
-    role: 'UI/UX Designer',
-    avatar: svgDataUri('MC', '#0b6b4f', 72),
+      "Working with the team on our Kerala tourism portal was effortless — clear milestones, thoughtful UX, and on-time delivery. Their local insight made the product resonate with users.",
+    author: 'Asha Nair',
+    role: 'Product Designer',
+    avatar: svgDataUri('AN', '#0b6b4f', 72),
   },
   {
     quote:
-      "This is why having reviews and client testimonials is important for your business. So, in thiarticle, go over some client testimonial examples you should be aware of and how you can go",
-    author: 'Michel Carlos',
-    role: 'UI/UX Designer',
-    avatar: svgDataUri('MC', '#0a66c2', 72),
+      "They rebuilt our analytics backend for monsoon-season traffic and improved reliability dramatically. The engineering discipline and communication stood out throughout.",
+    author: 'Rakesh Menon',
+    role: 'CTO, KeralaVoyage',
+    avatar: svgDataUri('RM', '#0a66c2', 72),
   },
   {
     quote:
-      "This is why having reviews and client testimonials is important for your business. So, in thiarticle, go over some client testimonial examples you should be aware of and how you can go",
-    author: 'Michel Carlos',
-    role: 'UI/UX Designer',
-    avatar: svgDataUri('MC', '#6a3fb8', 72),
+      "Their marketing integration helped us launch a campaign across Kochi and Thiruvananthapuram that exceeded engagement targets. Creative + technical execution was top-notch.",
+    author: 'Leela Varma',
+    role: 'Head of Marketing',
+    avatar: svgDataUri('LV', '#6a3fb8', 72),
   },
   {
     quote:
-      "This is why having reviews and client testimonials is important for your business. So, in thiarticle, go over some client testimonial examples you should be aware of and how you can go",
-    author: 'Michel Carlos',
-    role: 'UI/UX Designer',
-    avatar: svgDataUri('MC', '#d05a2d', 72),
+      "Operations improved after their automation work — fewer manual steps and faster turnaround for our Kerala supply chain partners. Highly recommended for pragmatic teams.",
+    author: 'Sajeev Kumar',
+    role: 'Operations Lead',
+    avatar: svgDataUri('SK', '#d05a2d', 72),
   },
 ];
 
 const avatarUrls = [
-  svgDataUri('A', '#0b6b4f', 48),
-  svgDataUri('B', '#0a66c2', 48),
-  svgDataUri('C', '#6a3fb8', 48),
-  svgDataUri('D', '#d05a2d', 48),
+  svgDataUri('AN', '#0b6b4f', 48),
+  svgDataUri('RM', '#0a66c2', 48),
+  svgDataUri('LV', '#6a3fb8', 48),
+  svgDataUri('SK', '#d05a2d', 48),
 ];
 
 function StarRating({ color = '#F97316', size = 16 }: { color?: string; size?: number }) {

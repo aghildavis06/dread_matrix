@@ -104,7 +104,7 @@ export default function Hero() {
           <div className="mb-6 flex items-center gap-3">
             <div className="h-px w-12 bg-loom-accent"></div>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-white">
-              Digital Agency · Est. 2020
+              Digital Agency · Est. 2026
             </span>
           </div>
 
@@ -115,7 +115,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg text-white md:text-xl font-sans leading-relaxed border-l-2 border-white/10 pl-6">
-            Digital Loom engineers performance-driven platforms, applications, and commerce systems built to scale.
+            Dread Matrix engineers performance-driven platforms, applications, and commerce systems built to scale.
             Precision code for the modern web.
           </p>
 

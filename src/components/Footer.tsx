@@ -22,10 +22,10 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-12 border-t border-white/10 pt-12 md:grid-cols-4">
           <div className="col-span-1 md:col-span-2">
-            <div className="mb-6 font-display text-2xl font-bold text-white">Digital Loom</div>
+            <div className="mb-6 font-display text-2xl font-bold text-white">Dread Matrix</div>
             <p className="max-w-xs text-sm text-gray-500">
               Precision engineered web systems for enterprise clients.
-              San Francisco • New York • London
+              India • Kerala • Kochi
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs text-gray-600 md:flex-row">
-          <div>© 2026 Digital Loom Inc. All rights reserved.</div>
+          <div>© 2026 Dread Matrix Inc. All rights reserved.</div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

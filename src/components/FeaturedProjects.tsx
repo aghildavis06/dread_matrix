@@ -4,27 +4,27 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 const projects = [
   {
-    title: "Cloud Migration",
+    title: "Nimbus Platform Migration",
     image:
-      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80&auto=format&fit=crop",
     alt: "Cloud migration project with cloud infrastructure",
   },
   {
-    title: "AI-Powered Chatbot",
+    title: "ConverseAI Assistant",
     image:
-      "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?w=1200&q=80&auto=format&fit=crop",
     alt: "AI powered chatbot interface and conversation UI",
   },
   {
-    title: "Cloud Migration",
+    title: "Aurora Data Platform",
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80&auto=format&fit=crop",
     alt: "Cloud platform migration and infrastructure",
   },
   {
-    title: "Cybersecurity Upgrade",
+    title: "Lockdown SecureMesh",
     image:
-      "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1200&q=80&auto=format&fit=crop",
     alt: "Cybersecurity upgrade with secure lock imagery",
   },
 ];

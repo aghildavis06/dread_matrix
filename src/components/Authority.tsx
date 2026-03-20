@@ -9,7 +9,7 @@ const metrics = [
 
 export default function Authority() {
   return (
-    <section className="w-full bg-loom-charcoal py-24 border-y border-white/5">
+    <section className="w-full bg-loom-black py-24 border-y border-white/5">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {metrics.map((metric, index) => (
